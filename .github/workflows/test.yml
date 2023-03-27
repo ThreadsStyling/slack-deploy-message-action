@@ -33,6 +33,7 @@ jobs:
           channels: UCATYBYG1
           environment: staging
           dry_run: true
+          service_status_auth: Bearer none
   local:
     runs-on: ubuntu-latest
     steps:
