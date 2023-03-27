@@ -30,7 +30,7 @@ jobs:
           service_status_url: https://next.staging.threads.team/api/status
           repo: ThreadsStyling/web-app-next-template
           slack_map_repo: ThreadsStyling/github-slack-mapping
-          channel: UCATYBYG1
+          channels: UCATYBYG1
           environment: staging
           dry_run: true
   local:
