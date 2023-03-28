@@ -10,7 +10,10 @@ jobs:
   build: # make sure build/ci work properly
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - run: |
           yarn install
       - run: |
@@ -18,7 +21,7 @@ jobs:
   test: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ./
         with:
           slack_webhook: ${{secrets.SLACK_WEBHOOK}}
@@ -26,15 +29,16 @@ jobs:
           commit: '25e6c46a48a3052c27b8f35e2e3cd513193ce9a8'
           service_status_url: https://next.staging.threads.team/api/status
           repo: ThreadsStyling/web-app-next-template
-          slack_map_repo: maael/github-slack-mapping
-          channel: UCATYBYG1
+          slack_map_repo: ThreadsStyling/github-slack-mapping
+          channels: UCATYBYG1
           environment: staging
           dry_run: true
+          service_status_auth: Bearer none
   local:
     runs-on: ubuntu-latest
     steps:
       - name: ACT Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         if: ${{env.ACT}}
         with:
           path: ./slack-deploy-message-action
@@ -46,7 +50,7 @@ jobs:
           commit: '25e6c46a48a3052c27b8f35e2e3cd513193ce9a8'
           service_status_url: https://next.staging.threads.team/api/status
           repo: ThreadsStyling/web-app-next-template
-          slack_map_repo: maael/github-slack-mapping
+          slack_map_repo: ThreadsStyling/github-slack-mapping
           channels: UCATYBYG1
           failure_channels: UCATYBYG1
           environment: staging
@@ -58,7 +62,7 @@ jobs:
           commit: '25e6c46a48a3052c27b8f35e2e3cd513193ce9a8'
           service_status_url: https://next.staging.threads.team/api/status
           repo: ThreadsStyling/web-app-next-template
-          slack_map_repo: maael/github-slack-mapping
+          slack_map_repo: ThreadsStyling/github-slack-mapping
           channels: UCATYBYG1
           failure_channels: UCATYBYG1
           environment: staging
