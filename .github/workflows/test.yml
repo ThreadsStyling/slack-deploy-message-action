@@ -26,7 +26,7 @@ jobs:
         with:
           slack_webhook: ${{secrets.SLACK_WEBHOOK}}
           github_token: ${{secrets.GH_PAT_TOKEN}}
-          commit: '25e6c46a48a3052c27b8f35e2e3cd513193ce9a8'
+          commit: 'df945c1'
           service_status_url: https://next.staging.threads.team/api/status
           repo: ThreadsStyling/web-app-next-template
           slack_map_repo: ThreadsStyling/github-slack-mapping
@@ -47,7 +47,7 @@ jobs:
         with:
           slack_webhook: ${{env.SLACK_WEBHOOK}}
           github_token: ${{env.GITHUB_PAT_TOKEN}}
-          commit: '25e6c46a48a3052c27b8f35e2e3cd513193ce9a8'
+          commit: 'df945c1'
           service_status_url: https://next.staging.threads.team/api/status
           repo: ThreadsStyling/web-app-next-template
           slack_map_repo: ThreadsStyling/github-slack-mapping
@@ -59,7 +59,7 @@ jobs:
         with:
           slack_webhook: ${{env.SLACK_WEBHOOK}}
           github_token: ${{env.GITHUB_PAT_TOKEN}}
-          commit: '25e6c46a48a3052c27b8f35e2e3cd513193ce9a8'
+          commit: 'df945c1'
           service_status_url: https://next.staging.threads.team/api/status
           repo: ThreadsStyling/web-app-next-template
           slack_map_repo: ThreadsStyling/github-slack-mapping
