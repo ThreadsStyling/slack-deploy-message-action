@@ -9,7 +9,6 @@ const iconMap: {[k: string]: string} = {
   uat: ':sleuth_or_spy:'
 }
 
-// eslint-disable-next-line no-shadow
 enum WorkflowStatus {
   'success' = 'success',
   'cancelled' = 'cancelled',
